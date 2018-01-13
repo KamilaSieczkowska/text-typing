@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie rekrutacyjne - Coders Lab</title>
+
+    <style type="text/css">
+
+        .text{
+            font-size: 24px;
+            font-family: sans-serif;
+            margin: 50px;
+        }
+
+        .cursor {
+            font-size: 30px;
+            animation: 0.5s blink step-end infinite;
+        }
+
+        @keyframes blink{
+            0% {
+                color:orange;
+            }
+            50% {
+                color: rgb(255, 228, 182);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <p class="text">
+        <span id="typedText"></span>
+        <span id="cursor" class="cursor">|</span>
+    </p>
+
+</body>
+
+    <script>
+        //wpisywanie tekstu:
+        function typing(){
+
+            var i = 0;
+            var txt = 'To jest rozwiązanie zadania rekrutacyjnego.';
+            var speed = 100;
+            var typedText = '';
+            var textP = document.getElementById('typedText');
+                
+                function type() {
+                    if (i < txt.length) {
+        
+                    typedText += txt.charAt(i);
+                    textP.innerText = typedText;  
+                    i++;
+                    
+                    setTimeout(type, speed);
+                    
+                    }
+                }
+            type()
+        }
+
+        typing();
+    
+    </script>
+</html>
